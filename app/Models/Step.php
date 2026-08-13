@@ -11,6 +11,10 @@ class Step extends Model
     /** @use HasFactory<\Database\Factories\StepFactory> */
     use HasFactory;
 
+    //Lorsque je crée une nouvelle instance de ce modèle, si aucune valeur
+    //n'est fournie pour completed, sa valeur par défaut sera false.
+    protected $attributes = ['completed' => false];
+
     public function idea(): BelongsTo
     {
         //Un Step appartient à une Idea.
