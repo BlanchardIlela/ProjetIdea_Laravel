@@ -28,6 +28,12 @@ class Idea extends Model
         'status' => IdeaStatus::class
     ];
 
+    //Déclaration de l'attribute permettant de récupérer
+    //PENDING depuis l'instance de IdeaStatus
+    protected $attributes = [
+        'status' => IdeaStatus::PENDING->value,
+    ];
+
     public function user(): BelongsTo
     {
         //Établit une relation Many-to-One (via la clé étrangère).
