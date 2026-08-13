@@ -1,4 +1,5 @@
- //Cette ligne permet de déclarer les données que le composant attend de l'extérieur.
+ {{-- Cette ligne permet de déclarer les données que le composant attend de l'extérieur. --}}
+
  @props(['title', 'description'])
 
  <div class="flex min-h-[calc(100dvh-4rem)] items-center justify-center px-4">
@@ -8,7 +9,7 @@
                 <p class="text-muted-foreground mt-1">{{ $description }}</p>
             </div>
 
-            //Représente le contenu placé entre les balises d'un composant
+            {{-- Représente le contenu placé entre les balises d'un composant --}}
             {{ $slot }}
         </div>
     </div>

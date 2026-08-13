@@ -1,4 +1,4 @@
-//Les données que le composant attend à l'exterieur
+{{-- Les données que le composant attend à l'exterieur --}}
 @props(['label', 'name', 'type' => 'text'])
 
 <div class="space-y-2">
