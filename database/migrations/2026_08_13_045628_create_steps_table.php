@@ -14,7 +14,8 @@ return new class extends Migration
     {
         Schema::create('steps', function (Blueprint $table) {
             $table->id();
-            $table->foreignId(Idea::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(\App\Models\Idea::class)->constrained()->cascadeOnDelete();
+            //$table->foreignIdFor(Idea::class)->constrained()->cascadeOnDelete();
             $table->string('description');
             $table->boolean('completed')->default(false);
             $table->timestamps();
