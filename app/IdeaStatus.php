@@ -31,6 +31,11 @@ enum IdeaStatus: string
             self::COMPLETED => 'completed'
         };
     }
+
+    public static function values()
+    {
+        return array_map(fn($tatus) => $tatus->value, static::cases());
+    }
 }
 
 
