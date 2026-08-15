@@ -31,9 +31,14 @@ class SessionsController extends Controller
         return redirect()->intended('/')->with('success', 'You are now logged in.');
     }
 
-    public function destroy()
+    public function destroy(Request $request)
     {
         Auth::logout();
+
+        /* Détruis la session actuelle et crée un nouvel identifiant de session. */
+        $request->session()->invalidate();
+        /* permet de générer un nouveau token CSRF */
+        $request->session()->regenerateToken();
 
         return redirect('/');
     }
